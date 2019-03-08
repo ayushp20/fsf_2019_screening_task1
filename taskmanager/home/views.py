@@ -1,18 +1,9 @@
 from django.shortcuts import render
-
-
-tasks = [
-	{
-		'creator': 'CoreyMS',
-		'title': 'Task 1',
-		'content': 'first task content',
-		'date_posted': 'March 8, 2019'
-	}
-]
+from .models import Task
 
 def home (request):
 	context = {
-		'tasks': tasks
+		'tasks': Task.objects.all()
 	}
 	return render (request, 'home/home.html', context)
 
