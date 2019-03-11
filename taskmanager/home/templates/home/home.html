@@ -9,7 +9,7 @@
 			     <a class="mr-2" href="#">{{ task.creator }}</a>
 			     <small class="text-muted">{{ task.date_posted|date:"F d, Y"}}</small>
 			   </div>
-			   <h2><a class="article-title" href="#">{{ task.title }}</a></h2>
+			   <h2><a class="article-title" href="{% url 'task-detail' task.id %}">{{ task.title }}</a></h2>
 			   <p class="article-content">{{ task.content }}</p>
 			 </div>
 		</article>
