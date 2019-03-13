@@ -22,7 +22,7 @@ class TaskDetailView(DetailView):
 
 class TaskCreateView( LoginRequiredMixin, CreateView):
 	model = Task
-	fields = ['title', 'content']
+	fields = ['title', 'content', 'status']
 
 	def form_valid(self, form):
 		form.instance.creator = self.request.user
@@ -30,7 +30,7 @@ class TaskCreateView( LoginRequiredMixin, CreateView):
 
 class TaskUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Task
-	fields = ['title', 'content']
+	fields = ['title', 'content', 'status']
 
 	def form_valid(self, form):
 		form.instance.creator = self.request.user
